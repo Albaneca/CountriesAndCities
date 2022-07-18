@@ -1,0 +1,35 @@
+﻿﻿
+@model CountryViewModel
+@{
+    ViewData["Title"] = @ViewData["Action"];
+}
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <form asp-controller="Country" asp-action="@ViewData["Action"]" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="Name" class="form-label" style="color:black">Name:</label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="@ViewData["Action"]" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit" />
+                    <a asp-action="Index" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
